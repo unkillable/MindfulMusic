@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Mindful Music</string>
+    <string name="family">Family</string>
+    <string name="item">Item</string>
+    <string name="nature">Nature</string>
+    <string name="record">Record a video or audio, or take a photo</string>
+    <string name="name_memory">Name your memory</string>
+    <string name="view_memories">View Memories</string>
+    <string name="add_memory">Add a Memory</string>
+    <string name="stop">Stop Recording</string>
+    <string name="play">Play</string>
+    <string name="stop_playing">Stop Playing</string>
+
+</resources>
