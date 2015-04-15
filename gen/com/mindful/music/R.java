@@ -25,7 +25,7 @@ public final class R {
         public static final int Others=0x7f060007;
         public static final int RelativeLayout1=0x7f060008;
         public static final int add_a_memory=0x7f060009;
-        public static final int button1=0x7f06000b;
+        public static final int auto_play=0x7f06000b;
         public static final int familylist=0x7f060004;
         public static final int imageView1=0x7f060000;
         public static final int play=0x7f060001;
@@ -47,6 +47,7 @@ public final class R {
     public static final class string {
         public static final int add_memory=0x7f040007;
         public static final int app_name=0x7f040000;
+        public static final int auto_play=0x7f04000b;
         public static final int family=0x7f040001;
         public static final int item=0x7f040002;
         public static final int name_memory=0x7f040005;

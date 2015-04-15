@@ -32,5 +32,13 @@ public class MainActivity extends Activity{
         		MainActivity.this.startActivity(myIntent);
             }
         });
+        final Button AutoPlayBtn = (Button) findViewById(R.id.auto_play);
+        AutoPlayBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+        		Intent myIntent = new Intent(MainActivity.this, AutoPlayActivity.class);
+        		MainActivity.this.startActivity(myIntent);
+            }
+        });
     }
 }

@@ -25,14 +25,14 @@
         android:text="@string/view_memories" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/auto_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/view_memories"
         android:minHeight="100dip"
-        android:text="Button" />
+        android:text="@string/auto_play" />
 
     <Button
         android:id="@+id/Button02"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/auto_play"
         android:minHeight="100dip"
         android:text="Button" />
 
