@@ -19,7 +19,6 @@ public final class R {
         public static final int rotate_camera=0x7f020005;
     }
     public static final class id {
-        public static final int Button02=0x7f06000c;
         public static final int Family=0x7f060005;
         public static final int Objects=0x7f060006;
         public static final int Others=0x7f060007;
@@ -34,6 +33,7 @@ public final class R {
         public static final int stop_playing=0x7f060003;
         public static final int stop_recording=0x7f060002;
         public static final int take_picture=0x7f06000e;
+        public static final int test_view=0x7f06000c;
         public static final int textView4=0x7f06000d;
         public static final int view_memories=0x7f06000a;
     }

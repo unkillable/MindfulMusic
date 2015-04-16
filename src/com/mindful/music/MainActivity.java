@@ -40,5 +40,13 @@ public class MainActivity extends Activity{
         		MainActivity.this.startActivity(myIntent);
             }
         });
+        final Button TestBtn = (Button) findViewById(R.id.test_view);
+        TestBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+        		Intent myIntent = new Intent(MainActivity.this, TestMediaView.class);
+        		MainActivity.this.startActivity(myIntent);
+            }
+        });
     }
 }
