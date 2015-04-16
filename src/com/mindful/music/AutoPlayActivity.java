@@ -1,12 +1,16 @@
 package com.mindful.music;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -70,15 +74,85 @@ public class AutoPlayActivity extends Activity{
 		        int position, long id) {
 		    	  //final String text = ((TextView)view).getText();
 		          //String text = codeLearnLessons.get(position).tostring().trim();//first method
-				  Intent intent = new Intent();
-				  intent.setAction(android.content.Intent.ACTION_VIEW);
-				  File file = new File(paths.get(position).toString());
-				  intent.setDataAndType(Uri.fromFile(file), "audio/*");
-				  startActivity(intent);
-		        }
-	       });
+				  //Intent intent = new Intent();
+				  //intent.setAction(android.content.Intent.ACTION_VIEW);
+				  //File file = new File(paths.get(position).toString());
+				  //intent.setDataAndType(Uri.fromFile(file), "audio/*");
+				  final MediaPlayer mp = new MediaPlayer();
+				  try {
+					mp.setDataSource(paths.get(position).toString());
+					mp.prepare();
+				    mp.start();
+				    } catch (IllegalArgumentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    } catch (SecurityException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    } catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    } catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    }
+				    try {
+    					Thread.sleep(10000);
+	    			} catch (InterruptedException e) {
+		    			// TODO Auto-generated catch block
+			    		e.printStackTrace();
+				    }
+				    
+				    mp.stop();
+					runOnUiThread(new Runnable() {
+					     @Override
+					     public void run() {
+					 		AlertDialog.Builder builder = new AlertDialog.Builder(AutoPlayActivity.this);
+							builder.setMessage("Would you like to continue playing the song?")
+						       .setTitle("Continue?")
+							// Add the buttons
+							.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+							           public void onClick(DialogInterface dialog, int id) {
+											try {
+												mp.prepare();
+											    mp.start();
+										 		AlertDialog.Builder builder = new AlertDialog.Builder(AutoPlayActivity.this);
+												builder.setMessage("Would you like to continue playing the song?")
+											       .setTitle("Continue?")
+												// Add the buttons
+												.setPositiveButton("Stop song", new DialogInterface.OnClickListener() {
+												           public void onClick(DialogInterface dialog, int id) {
+												        	   mp.stop();
+												           }
+												       })
+
+												.show();
+											} catch (IllegalStateException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											} catch (IOException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											}
+							               // User clicked OK button
+							           }
+							       })
+							.setNegativeButton("No", new DialogInterface.OnClickListener() {
+							           public void onClick(DialogInterface dialog, int id) {
+							               // User cancelled the dialog
+							           }
+							       })
+							.show();
+							// Create the AlertDialog
+							//AlertDialog dialog = builder.create();
+							//dialog.show();
+					    }
+					});
+		    }
+		});
 	    //for (int i = 0; i < projection.length; i++) {
 		//	System.out.println(projection[i]);
 		//}
 	}
 }
+		
