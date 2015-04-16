@@ -117,8 +117,8 @@ public class AutoPlayActivity extends Activity{
 												mp.prepare();
 											    mp.start();
 										 		AlertDialog.Builder builder = new AlertDialog.Builder(AutoPlayActivity.this);
-												builder.setMessage("Would you like to continue playing the song?")
-											       .setTitle("Continue?")
+												builder.setMessage("Press button to stop song")
+											       .setTitle("Playing")
 												// Add the buttons
 												.setPositiveButton("Stop song", new DialogInterface.OnClickListener() {
 												           public void onClick(DialogInterface dialog, int id) {
